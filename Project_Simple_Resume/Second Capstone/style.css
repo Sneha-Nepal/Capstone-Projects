@@ -1,0 +1,142 @@
+/*Animation for baqckground*/
+.gradient-background {
+    background: linear-gradient(300deg, #FFCFCF, #FFE2E2, #79D7BE);
+    background-size: 180% 180%;
+    animation: gradient-animation 18s ease infinite;
+    display: block;
+  }
+
+@keyframes gradient-animation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/*Main CSS Code*/
+body{
+  margin: 0;
+  text-align: center;
+
+}
+
+h1{
+  color:#A35C7A;
+}
+
+h2{
+  font-size: 18px;
+  color:rgb(90, 75, 75);
+}
+
+p{
+  font-family: 'Times New Roman', Times, serif;
+  color: rgb(48, 38, 38);
+  font-size: 20px;
+  max-width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+a {
+  color: #A35C7A;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 23px;
+}
+
+/* Hero Section */
+.hero .intro{
+  margin: 0; 
+  padding: 20px;
+  margin-bottom: 100px;
+}
+
+
+.hero p{
+  color: rgb(123, 152, 165);
+  font-size: 50px;
+  font-weight: 800;
+}
+
+.hero div img{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+  height: 200px;
+  padding: 0;
+}
+
+/* About Me */
+.about-me{
+  margin-top: 80px;
+  margin-bottom: 40px;
+}
+
+/* Resume */
+.resume{
+  background: #f8f2f2;
+  margin-bottom: 40px;
+  padding: 20px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.resume div{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  text-align: left;
+  background-color: white;
+  max-width: 800px;
+  padding: 20px;
+  margin-bottom: 20px;
+  border-radius: 8px;
+}
+
+.resume img{
+  height: 140px;
+  width: auto;
+  float: left;
+  margin: 10px;
+}
+
+/* Footer */
+.footer{
+  padding: 30px;
+  color:antiquewhite;
+  background-color: #b18d9c;
+}
+
+/* Responsive Layout */
+@media (max-width: 667px){
+  p{
+    font-size: 17px;
+  }
+
+  .about-me p{
+    margin: 0 25px;
+  }
+
+  .resume div{
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .resume img{
+    float: none;
+  }
+
+  .resume p{
+    margin: 10px 25px;
+  }
+
+}
