@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="/styles.css">
+    <title>post</title>
+    <%- include("partials/header.ejs") %>
+</head>
+<body>
+    <div class="post-card gradient-bg">
+        <div class="post-title"><%= onePost.blogTitle %></div>
+        <div class="post-row">
+            <div class="post-name">
+                <p class="post-name-style"><%= onePost.blogAuthor %></p>
+                <p class="post-name-style"><%= onePost.blogEmail %></p>
+                <div class="social-group">
+                    <% if (onePost.blogSocials.includes("facebook")) { %>
+                        <i class="bi bi-facebook post-name-style"></i>
+                    <% } %>
+                    <% if (onePost.blogSocials.includes("instagram")) { %>
+                        <i class="bi bi-instagram post-name-style"></i>
+                    <% } %>
+                    <% if (onePost.blogSocials.includes("snapchat")) { %>
+                        <i class="bi bi-snapchat post-name-style"></i>
+                    <% } %>
+                </div>
+            </div>
+            <img src="<%= onePost.blogImg %>" alt="Blog post image">
+        </div>
+
+        <div class="post-content">
+            <%= onePost.blogBody %>
+        </div>
+
+        <div class="post-bottom">
+            <a href="/edit/<%= index %>">Edit</a>
+            <form method="POST" action="/delete/<%= index %>">
+                <input type="submit" value="Delete">
+            </form>
+            <p><%= onePost.publishDate %></p>
+        </div>
+    </div>
+    <footer>
+        <%- include("partials/footer.ejs") %>
+    </footer>
+</body>
+</html>

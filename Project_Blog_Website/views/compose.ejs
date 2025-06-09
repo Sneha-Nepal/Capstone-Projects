@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/styles.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+    <title>compose</title>
+</head>
+<body>
+    <%- include("partials/header.ejs") %>
+    <div class="form-card gradient-bg">
+        <form method="POST" action="/compose-a-post" class="form-style form-card-style">
+            <input placeholder="Your Title" type="text" name="title">
+
+            <div class="form-row">
+                <div class="form-single">
+                    <label for="name">Name</label>
+                    <input type="text" name="name" placeholder="Enter your name">
+                </div>
+                <div class="form-single">
+                    <label for="name">Email</label>
+                    <input type="text" name="email" placeholder="Enter your E-mail">
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-single">
+                    <label>Connect with:</label>
+                    <div class="social-group">
+                        <input type="checkbox" id="facebook" name="socials[]" value="facebook">
+                        <label for="facebook"><i class="bi bi-facebook" aria-label="Facebook"></i></label>
+
+                        <input type="checkbox" id="instagram" name="socials[]" value="instagram">
+                        <label for="instagram"><i class="bi bi-instagram" aria-label="Instagram"></i></label>
+
+                        <input type="checkbox" id="snapchat" name="socials[]" value="snapchat">
+                        <label for="snapchat"><i class="bi bi-snapchat" aria-label="Snapchat"></i></label>
+                    </div>
+                </div>
+                <div class="form-single">
+                    <label for="image">Image</label>
+                    <input type="text" name="imgURL" placeholder="Enter your image URL...">
+                </div>
+            </div>
+            <div class="form-single">
+                <label for="body">Content</label>
+                <textarea name="content" rows="5" placeholder="Write your blog here..."></textarea>
+            </div>
+            <input type="submit" value="Publish">
+        </form>
+    </div>
+    <%- include("partials/footer.ejs") %>
+</body>
+</html>

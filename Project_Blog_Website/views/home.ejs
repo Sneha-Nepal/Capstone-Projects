@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/styles.css">
+    <title>home</title>
+    <%- include("partials/header.ejs") %>
+</head>
+<body class="gradient-bg">
+        <% if(posts.length == 0){ %>
+    <div class="home-msg">
+            <p>Welcome to Blog Website!</p>
+            <p>Click Compose for your first Blog!</p>
+    </div>
+        <% } %>
+        
+    <div class="home-card">
+        <% posts.forEach((post, index) => { %>
+        <div class="home-card-style">
+            <p class="title"><%= post.blogTitle %></p>
+            <p class="author"><%= post.blogAuthor %></p> 
+
+            <div class="home-content">
+                <p class="home-text">
+                    <%= post.blogBody.length > 300 ? post.blogBody.slice(0, 300) + "..." : post.blogBody %>
+                    <a href="/post/<%= index %>">View</a>
+                </p>
+                <% if(post.blogImg){ %>
+                    <img src="<%= post.blogImg %>" alt="Blog post image" class="home-img">
+                <% } %>
+            </div>
+
+            <p class="publish-date"><%= post.publishDate %></p>
+        </div>
+        <% }); %>
+    </div>
+</body>
+    <footer>
+        <%- include("partials/footer.ejs") %>
+    </footer>
+</html>
