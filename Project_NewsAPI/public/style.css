@@ -1,0 +1,118 @@
+.newspaper-body{
+    background-image: url("/images/newspaperTexture.jpg");
+    background-size: contain;
+    margin: 0;
+    padding: 0;
+    position: relative;
+}
+
+/* For lighter look of the newspaper background */
+.newspaper-body::before{
+    content: ""; /*This is required*/
+    position: absolute;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.3);
+    z-index: -1;
+}
+
+/* Style for specific cards */
+.news-card{
+    background-color: #fff;
+    border: 1px solid #525151;
+    border-radius: 10px;
+    padding: 25px 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    max-width: 800px;
+    width: 100%;
+}
+
+.news-author{
+    font-style: italic;
+    color: #555;
+    margin-bottom: 8px;
+    font-size: 0.9rem;
+}
+
+.news-title{
+    margin: 0 0 10px 0;
+    font-weight: 700;
+    font-family: 'Georgia', serif;
+    font-size: 1.2rem;
+}
+
+.news-title a{
+    text-decoration: none;
+    color: #222;
+    transition: color 0.3s ease;
+}
+
+.news-description{
+    font-size: 1rem;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+.news-footer{
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.85rem;
+    color: #777;
+    border-top: 1px solid #a8a7a7;
+    padding-top: 8px;
+    font-family: Arial, sans-serif;
+}
+
+.card-wrapper{
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    gap: 20px;
+    padding: 20px 0;
+}
+
+/* --About-- */
+.about-card{
+    background-color: #fff;
+    max-width: 400px;
+    margin: 80px auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-family: Arial, sans-serif;
+    box-shadow: 2px 2px 8px rgba(0,0,0,0.1);
+}
+
+.about-title{
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.about-content{
+    font-size: 1rem;
+    line-height: 1.4;
+    margin-bottom: 20px;
+    text-align: justify;
+}
+
+.author-details{
+    font-size: 0.9rem;
+    text-align: center;
+    margin: 4px 0;
+    color: #555;
+}
+
+@media(max-width: 768px){
+    .news-card{
+        max-width: 350px;
+    }
+
+    .about-card{
+        max-width: 350px;
+    }
+}

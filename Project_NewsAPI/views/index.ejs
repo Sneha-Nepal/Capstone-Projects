@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="/style.css" rel="stylesheet">
+    <title>Home</title>
+</head>
+<body class="newspaper-body">
+        <%- include("partials/header.ejs") %>
+        <div class="card-wrapper">
+            <% news.forEach(article => { %>
+                <div class="news-card">
+                    <div class="news-content">
+                    <p class="news-author"><%= article.author %></p>
+                    <div class="news-title">
+                        <a href="<%= article.url %>" target="_blank"><%=article.title %></a>
+                    </div>
+                    <p class="news-description"><%= article.description %></p>
+                    <div class="news-footer">
+                        <%=  new Date(article.publishedAt).toLocaleString() %>
+                    </div>
+                    </div>
+                </div>
+            <% }); %>
+        </div>
+        <%- include("partials/footer.ejs") %>
+</body>
+</html>
